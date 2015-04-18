@@ -1,5 +1,5 @@
 {
-  "name": "lint-reporter-utils",
+  "name": "hairballs",
   "version": "0.0.1",
   "description": "Shared utilities for Lint Reporters",
   "keywords": [
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/edendramis/lint-reporter-utils.git"
+    "url": "https://github.com/edendramis/hairballs.git"
   },
   "author": {
     "name": "Evangelia Dendramis",
@@ -23,12 +23,12 @@
   },
   "license": {
     "type": "MIT",
-    "url": "https://github.com/edendramis/lint-reporter-utils/blob/master/LICENSE"
+    "url": "https://github.com/edendramis/hairballs/blob/master/LICENSE"
   },
   "bugs": {
-    "url": "https://github.com/edendramis/lint-reporter-utils/issues"
+    "url": "https://github.com/edendramis/hairballs/issues"
   },
-  "homepage": "https://github.com/edendramis/lint-reporter-utils",
+  "homepage": "https://github.com/edendramis/hairballs",
   "dependencies": {
     "handlebars": "^3.0.1",
     "mocha-lcov-reporter": "0.0.2",
