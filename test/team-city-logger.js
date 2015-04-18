@@ -34,7 +34,7 @@ describe('TeamCityLogger(reportName)', function() {
       teamCityLogger.reportStart();
 
       expect(teamCityLogger.reportOutput[0])
-        .to.equal('##teamcity[testSuiteStarted name=\'Custom Report Name\']\n');
+        .to.equal('##teamcity[testSuiteStarted name=\'Custom Report Name\']');
     });
   });
 
@@ -46,7 +46,7 @@ describe('TeamCityLogger(reportName)', function() {
       teamCityLogger.reportEnd();
 
       expect(teamCityLogger.reportOutput[0])
-        .to.equal('##teamcity[testSuiteFinished name=\'Custom Report Name\']\n');
+        .to.equal('##teamcity[testSuiteFinished name=\'Custom Report Name\']');
     });
   });
 
@@ -58,7 +58,7 @@ describe('TeamCityLogger(reportName)', function() {
       teamCityLogger.testStart('Test Name');
 
       expect(teamCityLogger.reportOutput[0])
-        .to.equal('##teamcity[testStarted name=\'Custom Report Name: Test Name\']\n');
+        .to.equal('##teamcity[testStarted name=\'Custom Report Name: Test Name\']');
     });
   });
 
@@ -70,7 +70,7 @@ describe('TeamCityLogger(reportName)', function() {
       teamCityLogger.testEnd('Test Name');
 
       expect(teamCityLogger.reportOutput[0])
-        .to.equal('##teamcity[testFinished name=\'Custom Report Name: Test Name\']\n');
+        .to.equal('##teamcity[testFinished name=\'Custom Report Name: Test Name\']');
     });
 
   });
@@ -85,7 +85,7 @@ describe('TeamCityLogger(reportName)', function() {
       teamCityLogger.testFailed('Test Name', messageList);
 
       expect(teamCityLogger.reportOutput[0])
-        .to.equal('##teamcity[testFailed name=\'Custom Report Name: Test Name\' message=\'Error\']\n');
+        .to.equal('##teamcity[testFailed name=\'Custom Report Name: Test Name\' message=\'Error\']');
     });
 
     it('should print testFailed with report name, test name, and escape concatenated errors', function() {
@@ -96,7 +96,7 @@ describe('TeamCityLogger(reportName)', function() {
       teamCityLogger.testFailed('Test Name', messageList);
 
       expect(teamCityLogger.reportOutput[0])
-        .to.equal('##teamcity[testFailed name=\'Custom Report Name: Test Name\' message=\'Error1: |\'escape me|\'|nError2|nError3\']\n');
+        .to.equal('##teamcity[testFailed name=\'Custom Report Name: Test Name\' message=\'Error1: |\'escape me|\'|nError2|nError3\']');
     });
   });
 
