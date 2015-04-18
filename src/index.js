@@ -1,3 +1,4 @@
 'use strict';
 
-exports.teamCity = require('./js/team-city');
+exports.TeamCityLogger = require('./js/team-city-logger');
+exports.templateUtils = require('./js/template-utils');

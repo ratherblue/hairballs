@@ -12,7 +12,7 @@ function TeamCityLogger(reportName) {
    * @returns {void}
    */
   this.reportStart = function() {
-    this.reportOutput.push('##teamcity[testSuiteStarted name=\'' + this.reportName + '\']\n');
+    this.reportOutput.push('##teamcity[testSuiteStarted name=\'' + this.reportName + '\']');
   };
 
   /**
@@ -20,7 +20,7 @@ function TeamCityLogger(reportName) {
    * @returns {void}
    */
   this.reportEnd = function() {
-    this.reportOutput.push('##teamcity[testSuiteFinished name=\'' + this.reportName + '\']\n');
+    this.reportOutput.push('##teamcity[testSuiteFinished name=\'' + this.reportName + '\']');
   };
 
   /**
@@ -29,7 +29,7 @@ function TeamCityLogger(reportName) {
    * @returns {void}
    */
   this.testStart = function(testName) {
-    this.reportOutput.push('##teamcity[testStarted name=\'' + this.reportName + ': ' + this.escapeTeamCityString(testName) + '\']\n');
+    this.reportOutput.push('##teamcity[testStarted name=\'' + this.reportName + ': ' + this.escapeTeamCityString(testName) + '\']');
   };
 
   /**
@@ -38,7 +38,7 @@ function TeamCityLogger(reportName) {
    * @returns {void}
    */
   this.testEnd = function(testName) {
-    this.reportOutput.push('##teamcity[testFinished name=\'' + this.reportName + ': ' + this.escapeTeamCityString(testName) + '\']\n');
+    this.reportOutput.push('##teamcity[testFinished name=\'' + this.reportName + ': ' + this.escapeTeamCityString(testName) + '\']');
   };
 
   /**
@@ -49,7 +49,7 @@ function TeamCityLogger(reportName) {
    */
   this.testFailed = function(testName, messageList) {
     this.reportOutput.push('##teamcity[testFailed name=\'' + this.reportName +
-      ': ' + this.escapeTeamCityString(testName) + '\' message=\'' + this.escapeTeamCityString(messageList.join('\n')) + '\']\n');
+      ': ' + this.escapeTeamCityString(testName) + '\' message=\'' + this.escapeTeamCityString(messageList.join('\n')) + '\']');
   };
 
   /**
