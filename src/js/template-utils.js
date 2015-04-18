@@ -124,14 +124,20 @@ exports.registerHelpers = function() {
  */
  /* istanbul ignore next */
 exports.applyTemplates = function(data) {
+
+  // initialization
+  if (!data) {
+    throw new Error('Data is undefined');
+  }
+
   this.registerHelpers();
   this.registerPartials();
 
-  var overview = fs.readFileSync(path.join(__dirname, '..', 'templates', 'reporter.hbs'),
+  var reporter = fs.readFileSync(path.join(__dirname, '..', 'templates', 'reporter.hbs'),
     { encoding: 'utf-8' }
   );
 
-  var template = handlebars.compile(overview);
+  var template = handlebars.compile(reporter);
 
   return template(data);
 };

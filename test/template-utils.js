@@ -11,6 +11,15 @@ templateUtils.registerPartials();
 var handlebars = require('handlebars');
 
 describe('templateUtils', function() {
+
+  describe('applyTemplates(data)', function() {
+    it('should throw an error if no data is passed in', function() {
+      expect(function() {
+        templateUtils.applyTemplates();
+      }).to.throw(Error);
+    });
+  });
+
   describe('Helpers', function() {
     describe('formatSeverity(context)', function() {
 
