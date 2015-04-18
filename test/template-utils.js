@@ -1,14 +1,9 @@
 'use strict';
 
-var fs = require('fs');
-var path = require('path');
 var expect = require('chai').expect;
-var templateUtils = require('../src/js/template-utils');
-
-templateUtils.registerHelpers();
-templateUtils.registerPartials();
-
 var handlebars = require('handlebars');
+
+var templateUtils = require('../src/js/template-utils');
 
 describe('templateUtils', function() {
 
@@ -17,6 +12,31 @@ describe('templateUtils', function() {
       expect(function() {
         templateUtils.applyTemplates();
       }).to.throw(Error);
+    });
+
+    it('should return a compiled template', function() {
+
+      var summary = {
+        alerts: { errors: 0, warnings: 0, total: 0 },
+        files: { errors: 0, warnings: 0, clean: 0, total: 0 },
+        errorTypes: {}
+      };
+
+      /*eslint-disable no-unused-expressions */
+      expect(templateUtils.applyTemplates({
+          summary: summary,
+          warningOccurances: [],
+          errorOccurances: [],
+          files: [],
+          fullReport: false,
+          pageTitle: 'Page Title'
+        }))
+        .to.be.ok;
+
+      expect(templateUtils.applyTemplates({ }))
+        .to.be.ok;
+
+      /*eslint-enable */
     });
   });
 
@@ -91,29 +111,5 @@ describe('templateUtils', function() {
 
       });
     });
-
-  });
-
-  describe('Partials', function() {
-    describe('summary.hbs', function() {
-      var data = {
-        alerts: { errors: 12, warnings: 4, total: 16 },
-        files: { errors: 5, warnings: 3, clean: 4, total: 12 }
-      };
-
-      var template = handlebars.compile('{{> summary}}');
-
-      var partialsPath = path.join(__dirname, 'fixtures', 'templates', 'partials');
-      var summary = fs.readFileSync(path.join(partialsPath, 'summary.html'),
-        { encoding: 'utf-8' }
-      );
-
-      it('should return an html fragment', function() {
-        expect(template(data)).to.equal(summary);
-      });
-
-    });
-
-
   });
 });
