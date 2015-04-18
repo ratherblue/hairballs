@@ -122,6 +122,7 @@ exports.registerHelpers = function() {
  * @param {object} data - Data to parse with Handlebars template
  * @returns {string} - HTML-formatted report
  */
+ /* istanbul ignore next */
 exports.applyTemplates = function(data) {
   this.registerHelpers();
   this.registerPartials();

@@ -10,12 +10,6 @@ templateUtils.registerPartials();
 
 var handlebars = require('handlebars');
 
-/**
- * Mocha BDD interface.
- */
-/** @name describe @function */
-/** @name it @function */
-
 describe('templateUtils', function() {
   describe('Helpers', function() {
     describe('formatSeverity(context)', function() {

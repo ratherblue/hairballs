@@ -99,4 +99,13 @@ describe('TeamCityLogger(reportName)', function() {
         .to.equal('##teamcity[testFailed name=\'Custom Report Name: Test Name\' message=\'Error1: |\'escape me|\'|nError2|nError3\']\n');
     });
   });
+
+  describe('escapeTeamCityString(str)', function() {
+
+    it('should escape strings for valid TeamCity output', function() {
+      var teamCityLogger = new TeamCityLogger('Report Name');
+
+      expect(teamCityLogger.escapeTeamCityString()).to.equal('');
+    });
+  });
 });
