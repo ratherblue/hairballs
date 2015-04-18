@@ -1,7 +1,7 @@
 {
-  "name": "html-reporter-utils",
+  "name": "lint-reporter-utils",
   "version": "0.0.1",
-  "description": "Shared utilities for HTML Reporters",
+  "description": "Shared utilities for Lint Reporters",
   "keywords": [
     "eslint", "scss-lint", "team city"
   ],
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/edendramis/html-reporter-utils.git"
+    "url": "https://github.com/edendramis/lint-reporter-utils.git"
   },
   "author": {
     "name": "Evangelia Dendramis",
@@ -20,12 +20,12 @@
   },
   "license": {
     "type": "MIT",
-    "url": "https://github.com/edendramis/html-reporter-utils/blob/master/LICENSE"
+    "url": "https://github.com/edendramis/lint-reporter-utils/blob/master/LICENSE"
   },
   "bugs": {
-    "url": "https://github.com/edendramis/html-reporter-utils/issues"
+    "url": "https://github.com/edendramis/lint-reporter-utils/issues"
   },
-  "homepage": "https://github.com/edendramis/html-reporter-utils",
+  "homepage": "https://github.com/edendramis/lint-reporter-utils",
   "dependencies": {
     "handlebars": "^3.0.1"
   },
