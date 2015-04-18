@@ -9,8 +9,8 @@
   ],
   "main": "src/index.js",
   "scripts": {
-    "test": "mocha",
-    "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+    "test": "istanbul cover _mocha",
+    "coveralls-test": "istanbul cover _mocha && cat ./coverage/lcov.info | coveralls"
   },
   "repository": {
     "type": "git",
