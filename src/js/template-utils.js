@@ -36,13 +36,18 @@ exports.rowHelper = function(context, options) {
 exports.messageRow = function(context, options) {
   var className = '';
 
-  if (context.severity === 2) {
+  if (context.severity === 2 || context.severity === 'error') {
     className = 'msg-danger';
-  } else if (context.severity === 1) {
+  } else if (context.severity === 1 || context.severity === 'warning') {
     className = 'msg-warning';
   }
 
-  return '<tr class="' + className + '">' + options.fn(this) + '</tr>';
+  if (className === '') {
+    return '<tr>' + options.fn(this) + '</tr>';
+  } else {
+    return '<tr class="' + className + '">' + options.fn(this) + '</tr>';
+  }
+
 };
 
 /**
@@ -51,9 +56,9 @@ exports.messageRow = function(context, options) {
  * @returns {string} - Severity as text
  */
 exports.formatSeverity = function(context) {
-  if (context.severity === 2) {
+  if (context.severity === 2 || context.severity === 'error') {
     return 'Error';
-  } else if (context.severity === 1) {
+  } else if (context.severity === 1 || context.severity === 'warning') {
     return 'Warning';
   } else {
     return '';

@@ -1,16 +1,23 @@
 {
   "name": "html-reporter-utils",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Shared utilities for HTML Reporters",
+  "keywords": [
+    "eslint", "scss-lint", "team city"
+  ],
   "main": "src/index.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha ./test/test.js"
+    "test": "istanbul cover _mocha"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/edendramis/html-reporter-utils.git"
   },
-  "author": "Evangelia Dendramis <edendramis@gmail.com> (http://edendramis.com)",
+  "author": {
+    "name": "Evangelia Dendramis",
+    "email": "edendramis@gmail.com",
+    "url": "http://edendramis.com"
+  },
   "license": {
     "type": "MIT",
     "url": "https://github.com/edendramis/html-reporter-utils/blob/master/LICENSE"
@@ -24,6 +31,7 @@
   },
   "devDependencies": {
     "chai": "^2.2.0",
+    "istanbul": "^0.3.13",
     "mocha": "^2.2.4"
   }
 }
