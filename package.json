@@ -4,7 +4,7 @@
   "description": "Shared utilities for HTML Reporters",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/mocha/bin/mocha ./test/test.js"
   },
   "repository": {
     "type": "git",
@@ -18,5 +18,12 @@
   "bugs": {
     "url": "https://github.com/edendramis/html-reporter-utils/issues"
   },
-  "homepage": "https://github.com/edendramis/html-reporter-utils"
+  "homepage": "https://github.com/edendramis/html-reporter-utils",
+  "dependencies": {
+    "handlebars": "^3.0.1"
+  },
+  "devDependencies": {
+    "chai": "^2.2.0",
+    "mocha": "^2.2.4"
+  }
 }

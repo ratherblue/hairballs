@@ -1,5 +1,6 @@
 env:
   node: true
+  mocha: true
 
 rules:
   indent: [2, 2]
@@ -12,5 +13,5 @@ rules:
   space-in-parens: [2, "never"]
   strict: [2, "global"]
   brace-style: [2, "1tbs", { "allowSingleLine": false }]
-  comma-style: [2, "first"]
+  comma-style: [2, "last"]
   newline-after-var: [2, "always"]
