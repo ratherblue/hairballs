@@ -39,7 +39,11 @@
                     </td>
                     <td class="severity-col">{{formatSeverity this}}</td>
                     <td class="message-col">{{message}}</td>
-                    <td class="rule-col"><a href="http://eslint.org/docs/rules/{{ruleId}}">{{ruleId}}</a></td>
+                    {{#if ruleUrl}}
+                      <td class="rule-col"><a href="{{ruleUrl}}">{{ruleId}}</a></td>
+                    {{^}}
+                      <td class="rule-col">{{ruleId}}</td>
+                    {{/if}}
                   {{~/messageRow}}
                 {{~/each~}}
               </tbody>

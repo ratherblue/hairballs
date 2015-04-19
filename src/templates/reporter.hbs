@@ -15,10 +15,10 @@
   <div class="eslint-report">
     <h1>{{pageTitle}}</h1>
 
-    {{#if summary.files.total}}
-      {{> summary summary}}
+    {{#if fileSummary.total}}
+      {{> summary this}}
 
-      {{#if summary.alerts.total}}
+      {{#if alertSummary.total}}
         {{> occurances this}}
       {{/if}}
 

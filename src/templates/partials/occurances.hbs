@@ -9,7 +9,11 @@
         <tbody>
           {{#each errorOccurances}}
             <tr>
-              <td><a href="http://eslint.org/docs/rules/{{name}}">{{name}}</a></td>
+              {{#if ruleUrl}}
+                <td><a href="{{ruleUrl}}">{{name}}</a></td>
+              {{^}}
+                <td>{{name}}</td>
+              {{/if}}
               <td>{{count}}</td>
             </tr>
           {{/each}}
@@ -27,7 +31,11 @@
         <tbody>
           {{#each warningOccurances}}
             <tr>
-              <td><a href="http://eslint.org/docs/rules/{{name}}">{{name}}</a></td>
+              {{#if ruleUrl}}
+                <td><a href="{{ruleUrl}}">{{name}}</a></td>
+              {{^}}
+                <td>{{name}}</td>
+              {{/if}}
               <td>{{count}}</td>
             </tr>
           {{/each}}

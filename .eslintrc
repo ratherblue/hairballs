@@ -14,4 +14,3 @@ rules:
   strict: [2, "global"]
   brace-style: [2, "1tbs", { "allowSingleLine": false }]
   comma-style: [2, "last"]
-  newline-after-var: [2, "always"]
