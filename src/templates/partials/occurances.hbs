@@ -8,7 +8,7 @@
       <table class="summary-table">
         <tbody>
           {{#each errorOccurances}}
-            <tr>
+            <tr class="occurance row-{{@index}}">
               {{#if ruleUrl}}
                 <td><a href="{{ruleUrl}}">{{name}}</a></td>
               {{^}}
@@ -30,7 +30,7 @@
       <table class="summary-table">
         <tbody>
           {{#each warningOccurances}}
-            <tr>
+            <tr class="occurance row-{{@index}}">
               {{#if ruleUrl}}
                 <td><a href="{{ruleUrl}}">{{name}}</a></td>
               {{^}}
