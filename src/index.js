@@ -53,7 +53,7 @@ this.updateAlertSummary = function(alert) {
     this.alertSummary.warnings++;
   }
 
-  this.alertSummary.total++;
+  this.alertSummary.total = this.alertSummary.errors + this.alertSummary.warnings;
 };
 
 
