@@ -24,6 +24,38 @@ function TeamCityLogger(reportName) {
   };
 
   /**
+   * Adds end of report to output
+   * @param {string} text - Message name
+   * @param {string} errorDetails - Message name
+   * @param {string} status - Status type (NORMAL, WARNING, FAILURE, ERROR)
+   * @returns {void}
+   */
+  this.logMessage = function(text, errorDetails, status) {
+
+    var output = [];
+
+    if (text) {
+      output.push('text=\'' + this.escapeTeamCityString(text) + '\'');
+    } else {
+      throw new Error('Message text is not defined');
+    }
+
+    if (errorDetails) {
+      output.push('errorDetails=\'' + this.escapeTeamCityString(errorDetails) + '\'');
+    }
+
+    if (status) {
+      if (['NORMAL', 'WARNING', 'FAILURE', 'ERROR'].indexOf(status) > -1) {
+        output.push('status=\'' + status + '\'');
+      } else {
+        throw new Error('Please enter a valid status value. Value was ' + status + ' and needs to be one of NORMAL, WARNING, FAILURE, ERROR');
+      }
+    }
+
+    this.reportOutput.push('##teamcity[message ' + output.join(' ') + ']');
+  };
+
+  /**
    * Adds start of test to output
    * @param {string} testName - Name of test
    * @returns {void}

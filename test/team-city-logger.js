@@ -75,6 +75,43 @@ describe('TeamCityLogger(reportName)', function() {
 
   });
 
+  describe('logMessage(text, errorDetails, status)', function() {
+
+    it('should print a message', function() {
+      var teamCityLogger = new TeamCityLogger(reportName);
+
+      teamCityLogger.logMessage('Message Text', 'Error Details', 'ERROR');
+
+      expect(teamCityLogger.reportOutput[0])
+        .to.equal('##teamcity[message text=\'Message Text\' errorDetails=\'Error Details\' status=\'ERROR\']');
+
+      teamCityLogger.logMessage('Message Text', 'Error Details');
+
+      expect(teamCityLogger.reportOutput[1])
+        .to.equal('##teamcity[message text=\'Message Text\' errorDetails=\'Error Details\']');
+
+      teamCityLogger.logMessage('Message Text');
+
+      expect(teamCityLogger.reportOutput[2])
+        .to.equal('##teamcity[message text=\'Message Text\']');
+    });
+
+    it('should throw if text is undefined', function() {
+      expect(function() {
+        var teamCityLogger = new TeamCityLogger(reportName);
+        teamCityLogger.logMessage();
+      }).to.throw(Error);
+    });
+
+    it('should throw if the status is invalid', function() {
+      expect(function() {
+        var teamCityLogger = new TeamCityLogger(reportName);
+        teamCityLogger.logMessage('Message Text', 'Error Details', 'invalid error');
+      }).to.throw(Error);
+    });
+
+  });
+
   describe('testFailed(testName, messageList)', function() {
 
     it('should print testFailed with report name, test name, and concatenate errors', function() {
