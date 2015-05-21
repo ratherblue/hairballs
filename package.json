@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/edendramis/hairballs",
   "dependencies": {
-    "handlebars": "^3.0.1",
+    "handlebars": "^3.0.1"
   },
   "devDependencies": {
     "chai": "^2.2.0",
