@@ -1,6 +1,5 @@
 /**
  * @fileoverview Template Utils for HTML Reporters
- * @author Evangelia Dendramis
  */
 'use strict';
 
