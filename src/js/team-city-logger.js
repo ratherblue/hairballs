@@ -1,6 +1,5 @@
 /**
  * @fileoverview Utilities for reporting to TeamCity
- * @author Evangelia Dendramis
  */
 'use strict';
 
