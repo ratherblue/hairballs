@@ -1,3 +1,14 @@
+# 0.1.1 - April 7, 2015
+
+* Fix changelog update
+
+
+# 0.1.0 - April 7, 2015
+
+* Updated to latest version of handlebars
+* Updated dev dependencies to latest versions
+
+
 # 0.0.9 - August 6, 2015
 
 Bug fixes
@@ -17,6 +28,5 @@ Improvements
 
 Misc
 
-* Updated to latest version of hairballs
 * Updated dev dependencies to latest versions
 
