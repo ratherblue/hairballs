@@ -14,19 +14,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/edendramis/hairballs.git"
+    "url": "https://github.com/ratherblue/hairballs.git"
   },
   "author": {
-    "email": "edendramis@gmail.com"
+    "email": "ratherblue@gmail.com"
   },
   "license": {
     "type": "MIT",
-    "url": "https://github.com/edendramis/hairballs/blob/master/LICENSE"
+    "url": "https://github.com/ratherblue/hairballs/blob/master/LICENSE"
   },
   "bugs": {
-    "url": "https://github.com/edendramis/hairballs/issues"
+    "url": "https://github.com/ratherblue/hairballs/issues"
   },
-  "homepage": "https://github.com/edendramis/hairballs",
+  "homepage": "https://github.com/ratherblue/hairballs",
   "dependencies": {
     "handlebars": "4.0.5"
   },
