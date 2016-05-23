@@ -89,51 +89,51 @@ describe('main', function() {
     });
   });
 
-  describe('sortOccurances(a, b)', function() {
+  describe('sortOccurrences(a, b)', function() {
     it('should sort', function() {
       var a1 = { count: 4 };
       var b1 = { count: 3 };
 
-      expect(index.sortOccurances(a1, b1)).to.equal(-1);
+      expect(index.sortOccurrences(a1, b1)).to.equal(-1);
 
       var a2 = { count: 5 };
       var b2 = { count: 6 };
 
-      expect(index.sortOccurances(a2, b2)).to.equal(1);
+      expect(index.sortOccurrences(a2, b2)).to.equal(1);
 
       var a3 = { count: 2 };
       var b3 = { count: 2 };
 
-      expect(index.sortOccurances(a3, b3)).to.equal(0);
+      expect(index.sortOccurrences(a3, b3)).to.equal(0);
     });
   });
 
-  describe('updateOccurance(key, severity, ruleUrl)', function() {
-    it('should update error occurances', function() {
-      index.updateOccurance('errorKey', 'error', 'url.html');
+  describe('updateOccurrence(key, severity, ruleUrl)', function() {
+    it('should update error occurrences', function() {
+      index.updateOccurrence('errorKey', 'error', 'url.html');
 
-      expect(index.errorOccurances[0].name).to.equal('errorKey');
-      expect(index.errorOccurances[0].count).to.equal(1);
-      expect(index.errorOccurances[0].ruleUrl).to.equal('url.html');
+      expect(index.errorOccurrences[0].name).to.equal('errorKey');
+      expect(index.errorOccurrences[0].count).to.equal(1);
+      expect(index.errorOccurrences[0].ruleUrl).to.equal('url.html');
 
-      index.updateOccurance('errorKey', 2, 'url.html');
-      index.updateOccurance('errorKey', 'error', 'url.html');
+      index.updateOccurrence('errorKey', 2, 'url.html');
+      index.updateOccurrence('errorKey', 'error', 'url.html');
 
-      expect(index.errorOccurances[0].count).to.equal(3);
+      expect(index.errorOccurrences[0].count).to.equal(3);
     });
 
-    it('should update warning occurances', function() {
-      index.updateOccurance('warningKey', 'warning', 'url.html');
+    it('should update warning occurrences', function() {
+      index.updateOccurrence('warningKey', 'warning', 'url.html');
 
-      expect(index.warningOccurances[0].name).to.equal('warningKey');
-      expect(index.warningOccurances[0].count).to.equal(1);
-      expect(index.warningOccurances[0].ruleUrl).to.equal('url.html');
+      expect(index.warningOccurrences[0].name).to.equal('warningKey');
+      expect(index.warningOccurrences[0].count).to.equal(1);
+      expect(index.warningOccurrences[0].ruleUrl).to.equal('url.html');
 
-      index.updateOccurance('warningKey', 1, 'url.html');
-      index.updateOccurance('warningKeyOther', 1, 'url.html');
+      index.updateOccurrence('warningKey', 1, 'url.html');
+      index.updateOccurrence('warningKeyOther', 1, 'url.html');
 
-      expect(index.warningOccurances[0].count).to.equal(2);
-      expect(index.warningOccurances[1].count).to.equal(1);
+      expect(index.warningOccurrences[0].count).to.equal(2);
+      expect(index.warningOccurrences[1].count).to.equal(1);
     });
   });
 
