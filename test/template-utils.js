@@ -25,8 +25,8 @@ describe('templateUtils', function() {
       /*eslint-disable no-unused-expressions */
       expect(templateUtils.applyTemplates({
           summary: summary,
-          warningOccurances: [],
-          errorOccurances: [],
+          warningOccurrences: [],
+          errorOccurrences: [],
           files: [],
           fullReport: false,
           pageTitle: 'Page Title'
