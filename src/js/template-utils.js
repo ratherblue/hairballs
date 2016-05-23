@@ -83,8 +83,8 @@ exports.registerPartials = function() {
     { encoding: 'utf-8' }
   );
 
-  // occurances
-  var occurances = fs.readFileSync(path.join(partialsPath, 'occurances.hbs'),
+  // occurrences
+  var occurrences = fs.readFileSync(path.join(partialsPath, 'occurrences.hbs'),
     { encoding: 'utf-8' }
   );
 
@@ -101,7 +101,7 @@ exports.registerPartials = function() {
   handlebars.registerPartial({
     summary: handlebars.compile(summary),
     fileBreakdown: handlebars.compile(fileBreakdown),
-    occurances: handlebars.compile(occurances),
+    occurrences: handlebars.compile(occurrences),
     js: handlebars.compile(js),
     css: handlebars.compile(css)
   });
