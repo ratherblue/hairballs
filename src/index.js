@@ -18,8 +18,8 @@ exports.alertSummary = {
   total: 0
 };
 
-exports.errorOccurances = [];
-exports.warningOccurances = [];
+exports.errorOccurrences = [];
+exports.warningOccurrences = [];
 
 /**
  * Updates file summary
@@ -87,37 +87,37 @@ exports.sortErrors = function(a, b) {
 
 
 /**
- * Helper for sorting occurances
+ * Helper for sorting occurrences
  * @param {object} a - First object to compare
  * @param {object} b - Second object to compare
- * @returns {int} - Value used to sort the occurances
+ * @returns {int} - Value used to sort the occurrences
  */
-exports.sortOccurances = function(a, b) {
+exports.sortOccurrences = function(a, b) {
   return b.count - a.count;
 };
 
 
 /**
- * Count the occurances of an alert
+ * Count the occurrences of an alert
  * @param {string} key - Linting rule
- * @param {array} severity - Array of occurances
+ * @param {array} severity - Array of occurrences
  * @param {string|boolean} ruleUrl - URL of rule for reference
  * @returns {void}
  */
-exports.updateOccurance = function(key, severity, ruleUrl) {
-  var foundOccurance = false;
+exports.updateOccurrence = function(key, severity, ruleUrl) {
+  var foundOccurrence = false;
 
   var occurances = (severity === 'error' || severity === 2)
-                      ? this.errorOccurances : this.warningOccurances;
+                      ? this.errorOccurrences : this.warningOccurrences;
 
-  for (var x = 0; x < occurances.length; x++) {
-    if (occurances[x].name === key) {
-      foundOccurance = true;
-      occurances[x].count++;
+  for (var x = 0; x < occurrences.length; x++) {
+    if (occurrences[x].name === key) {
+      foundOccurrence = true;
+      occurrences[x].count++;
     }
   }
 
-  if (!foundOccurance) {
-    occurances.push({ name: key, count: 1, ruleUrl: ruleUrl});
+  if (!foundOccurrence) {
+    occurrences.push({ name: key, count: 1, ruleUrl: ruleUrl});
   }
 };
