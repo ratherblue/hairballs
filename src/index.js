@@ -107,7 +107,7 @@ exports.sortOccurrences = function(a, b) {
 exports.updateOccurrence = function(key, severity, ruleUrl) {
   var foundOccurrence = false;
 
-  var occurances = (severity === 'error' || severity === 2)
+  var occurrences = (severity === 'error' || severity === 2)
                       ? this.errorOccurrences : this.warningOccurrences;
 
   for (var x = 0; x < occurrences.length; x++) {
