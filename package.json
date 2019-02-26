@@ -1,7 +1,7 @@
 {
   "name": "hairballs",
   "version": "0.2.0",
-  "description": "Shared utilities for Lint Reporters",
+  "description": "Shared utilities for Lint Reporters ",
   "keywords": [
     "eslint",
     "scss-lint",
